@@ -131,8 +131,10 @@ export const Comment = Mark.create<CommentOptions>({
       unsetComment:
         (commentId: string) =>
         ({ tr, state, dispatch }) => {
-          const { doc, selection } = state
-          const { from, to } = selection
+          const { doc } = state
+          // 在整个文档范围内查找批注，而不是只在当前选区
+          const from = 0
+          const to = doc.content.size
           let removed = false
 
           doc.nodesBetween(from, to, (node, pos) => {
