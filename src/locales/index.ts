@@ -2,6 +2,7 @@ import { computed, ref, unref, watchEffect } from 'vue'
 
 import zhHans from './locales/zh'
 import en from './locales/en'
+import de from './locales/de'
 
 import { DEFAULT_LANG_VALUE } from '@/constants'
 import mitt from '@/utils/mitt'
@@ -21,6 +22,7 @@ export const DEFAULT_LOCALE: LocaleInterface = {
   message: {
     zhHans,
     en,
+    de,
   },
 }
 
@@ -118,4 +120,4 @@ const useLocale = () => {
 }
 
 export default locale
-export { Locale, useLocale, zhHans, en }
+export { Locale, useLocale, zhHans, en, de }
